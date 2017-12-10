@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function checkForm(form){
+			//regular expression to match only alphanumeric characters and spaces
+			var  re = /^[\w ]+$/;
+			var errors =[];
+			//validation fails if input is blank
+			if(form.inputfield.value == ""){
+				errors.push("Input Field is blank");
+			}else if(!re.test(form.inputfield.value)){
+				errors.push("Input contains invalid characters");
+			}
+
+			if (form.password1.value == "") {
+				errors.push("Password is empty");
+			}else if(form.password1.value != form.password2.value){
+				errors.push("Passwords don't match");
+			}
+
+			if(errors.length > 0){
+				var msg ="ERRORS\n\n";
+				for(var i=0; i<errors.length; i++){
+					msg+=errors[i] + "\n";
+				}
+				alert(msg);
+				return false;
+			}
+
+			//validation successful
+			return true;
+		}
+
+
+		function colorChange(){
+			var color = document.getElementById('color').value;
+			document.getElementById('colorchange').style.backgroundColor = color;
+		}
+
+	</script>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+
+		li {
+			float: left;
+		}
+
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+
+		#comeHere:target + .change a[href="#comeHere"] {
+		  color: #444;
+		}
+
+		#goThere:target + .change a[href="#goThere"] {
+		  color: #777;
+		}
+
+		@media print {
+			#Header, #Footer { 
+				visibility: hidden !important; 
+				display: none !important; 
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="Header">LOGOOOOOOOO</div>
+	<form method="post" action="form-handler.html" onsubmit="return checkForm(this);">
+		<nav>
+			<ul>
+				<li class="change"><a href="#comeHere">Come Here</a></li>
+				<li class="change"><a href="#goThere">Go There</a></li>
+			</ul>
+		</nav>
+		<p>
+			Input:
+			<input type="text" size="32" name="inputfield" >
+		</p>
+		<p>
+			Enter Password:
+			<input type="password" size="10" name="password1" >
+		</p>
+		<p>
+			Confirm Password:
+			<input type="password" size="10" name="password2" >
+		</p>
+		<p>
+			Email:
+			<input type="email" size="10" name="emailAddress" required>
+		</p>
+
+
+
+
+		<div id="comeHere">Came here</div>
+
+
+		<p>
+			Text Box with Drop down:
+			<input type="text" list="language" name="language">
+			<datalist id="language">
+				<option value="javascript"></option>
+				<option value="java"></option>
+				<option value="python"></option>
+				<option value="Angular"></option>
+			</datalist>
+		</p>
+		<p>
+			Select Number between 10 to 30
+			<input type="number" min="10" max="30" name="">
+		</p>
+		<p>
+			Birthday:
+			<input type="date" name="bday">
+		</p>
+
+		<p>	
+			<input type="submit" name="">
+			<input type="reset" value="Reset">
+		</p>
+	</form>
+
+	<p>
+		color Picker:
+		<input type="color" id="color">
+		<input type="button" onclick="colorChange()" value="Change Color">
+	</p>
+	<div id="colorchange">Something</div>
+	<div id="goThere">Went There</div>
+	<video width="100%" height="240" controls>
+		<source src="movie.mp4" type="video/mp4">
+		<source src="movie.ogg" type="video/ogg">
+			Your browser does not support the video tag.
+	</video>
+	<div id="Footer">LINKS</div>
+</body>
+</html>
