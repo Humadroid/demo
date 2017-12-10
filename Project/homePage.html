@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Hello World</title>
 	<style type="text/css"></style>
 	<script type="text/javascript">
-		if(localStorage){
+		if (localStorage) {
 			document.write("local Storage are Supported");
 		}
-		else{
+		else {
 			document.write("local Storage are not Supported");
 		}
-		function storeData(){
+		function storeData() {
 			localStorage.firstname = document.getElementById('fname').value;
 		}
-		function getLocalStorage(){
+		function getLocalStorage() {
 			if (localStorage.firstname) {
 				document.getElementById('span1').innerHTML = localStorage.firstname;
 			}
 		}
 	</script>
 </head>
+
 <body onload="getLocalStorage()">
 	<img src="img_girl.jpg" alt="Girl in a jacket" style="border:1px solid;border-radius:10px; width: 100%;display: inline-block;">
 	<table style="width: 100%;">
 		<tr>
 			<td style="width: 60%; border:1px solid; border-radius:10px;padding: 10px; background: red">
 				<form action="output.html">
-					<label>First Name:</label><br>
+					<label>First Name:</label>
+					<br>
 					<input type="text" id="fname" name="firstname" placeholder="First Name" required>
 					<br>
-					<label>Last Name:</label><br>
+					<label>Last Name:</label>
+					<br>
 					<input type="text" name="lastname" placeholder="Mouse" required>
-					<br><br>
-					<input type="radio" name="gender" value="male" checked> Male<br>
-					<input type="radio" name="gender" value="female"> Female<br>
+					<br>
+					<br>
+					<input type="radio" name="gender" value="male" checked> Male
+					<br>
+					<input type="radio" name="gender" value="female"> Female
+					<br>
 					<input type="radio" name="gender" value="other"> Other
 					<input id="date" type="date">
-					<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-					<input type="checkbox" name="vehicle2" value="Car"> I have a car 
+					<input type="checkbox" name="vehicle1" value="Bike"> I have a bike
+					<br>
+					<input type="checkbox" name="vehicle2" value="Car"> I have a car
 					<button type="submit" onclick="storeData()" value="Submit">Submit</button>
 					<input type="reset" value="Reset">
 					<input type="date">
@@ -47,8 +55,7 @@
 			<td style="width: 40%; border:1px solid; border-radius:10px; padding: 10px">
 				<video width="100%" height="240" controls>
 					<source src="movie.mp4" type="video/mp4">
-					<source src="movie.ogg" type="video/ogg">
-						Your browser does not support the video tag.
+					<source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.
 				</video>
 				<input type="color" name="favcolor" value="#ff0000">
 			</td>
@@ -56,5 +63,5 @@
 	</table>
 	<div style="box-sizing: border-box;border:1px solid; border-radius:10px;padding: 10px">Footer</div>
 </body>
-</html>
 
+</html>

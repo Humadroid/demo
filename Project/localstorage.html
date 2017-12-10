@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<script type="text/javascript">
-		if(localStorage){
+		if (localStorage) {
 			document.write("local Storage are Supported");
 		}
-		else{
+		else {
 			document.write("local Storage are not Supported");
 		}
-		function storeData(){
+		function storeData() {
 			localStorage.username = document.getElementById('txt_username').value;
 		}
-		function getLocalStorage(){
+		function getLocalStorage() {
 			if (localStorage.username) {
 				document.getElementById('span1').innerHTML = localStorage.username;
 			}
 		}
 	</script>
 </head>
+
 <body onload="getLocalStorage()">
 	<input type="text" id="txt_username" name="username" value="">
 	<input type="button" onclick="storeData()" name="name" value="Submit">
 	<span id="span1"></span>
 </body>
+
 </html>

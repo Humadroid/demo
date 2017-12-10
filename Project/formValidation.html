@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title></title>
 	<script type="text/javascript">
-		function checkForm(form){
+		function checkForm(form) {
 			//regular expression to match only alphanumeric characters and spaces
-			var  re = /^[\w ]+$/;
-			var errors =[];
+			var re = /^[\w ]+$/;
+			var errors = [];
 			//validation fails if input is blank
-			if(form.inputfield.value == ""){
+			if (form.inputfield.value == "") {
 				errors.push("Input Field is blank");
-			}else if(!re.test(form.inputfield.value)){
+			} else if (!re.test(form.inputfield.value)) {
 				errors.push("Input contains invalid characters");
 			}
 
 			if (form.password1.value == "") {
 				errors.push("Password is empty");
-			}else if(form.password1.value != form.password2.value){
+			} else if (form.password1.value != form.password2.value) {
 				errors.push("Passwords don't match");
 			}
 
-			if(errors.length > 0){
-				var msg ="ERRORS\n\n";
-				for(var i=0; i<errors.length; i++){
-					msg+=errors[i] + "\n";
+			if (errors.length > 0) {
+				var msg = "ERRORS\n\n";
+				for (var i = 0; i < errors.length; i++) {
+					msg += errors[i] + "\n";
 				}
 				alert(msg);
 				return false;
@@ -34,7 +35,7 @@
 		}
 
 
-		function colorChange(){
+		function colorChange() {
 			var color = document.getElementById('color').value;
 			document.getElementById('colorchange').style.backgroundColor = color;
 		}
@@ -62,42 +63,48 @@
 		}
 
 
-		#comeHere:target + .change a[href="#comeHere"] {
-		  color: #444;
+		#comeHere:target+.change a[href="#comeHere"] {
+			color: #444;
 		}
 
-		#goThere:target + .change a[href="#goThere"] {
-		  color: #777;
+		#goThere:target+.change a[href="#goThere"] {
+			color: #777;
 		}
 
 		@media print {
-			#Header, #Footer { 
-				visibility: hidden !important; 
-				display: none !important; 
+			#Header,
+			#Footer {
+				visibility: hidden !important;
+				display: none !important;
 			}
 		}
 	</style>
 </head>
+
 <body>
 	<div id="Header">LOGOOOOOOOO</div>
 	<form method="post" action="form-handler.html" onsubmit="return checkForm(this);">
 		<nav>
 			<ul>
-				<li class="change"><a href="#comeHere">Come Here</a></li>
-				<li class="change"><a href="#goThere">Go There</a></li>
+				<li class="change">
+					<a href="#comeHere">Come Here</a>
+				</li>
+				<li class="change">
+					<a href="#goThere">Go There</a>
+				</li>
 			</ul>
 		</nav>
 		<p>
 			Input:
-			<input type="text" size="32" name="inputfield" >
+			<input type="text" size="32" name="inputfield">
 		</p>
 		<p>
 			Enter Password:
-			<input type="password" size="10" name="password1" >
+			<input type="password" size="10" name="password1">
 		</p>
 		<p>
 			Confirm Password:
-			<input type="password" size="10" name="password2" >
+			<input type="password" size="10" name="password2">
 		</p>
 		<p>
 			Email:
@@ -129,7 +136,7 @@
 			<input type="date" name="bday">
 		</p>
 
-		<p>	
+		<p>
 			<input type="submit" name="">
 			<input type="reset" value="Reset">
 		</p>
@@ -144,9 +151,9 @@
 	<div id="goThere">Went There</div>
 	<video width="100%" height="240" controls>
 		<source src="movie.mp4" type="video/mp4">
-		<source src="movie.ogg" type="video/ogg">
-			Your browser does not support the video tag.
+		<source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.
 	</video>
 	<div id="Footer">LINKS</div>
 </body>
+
 </html>

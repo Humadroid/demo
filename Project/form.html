@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Hello World</title>
 	<style type="text/css">
-	.modalWindow {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: rgba(0,0,0,0.2);
-		z-index: 99999;
-		opacity:0;
-		display: none;
-	}
-	.modalWindow:target {
-		opacity:1;
-		display: block;
-	}
-	.modalWindow > div {
-		width: 500px;
-		position: relative;
-		margin: 10% auto;
-		background: #fff;
-	}
-</style>
+		.modalWindow {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.2);
+			z-index: 99999;
+			opacity: 0;
+			display: none;
+		}
+
+		.modalWindow:target {
+			opacity: 1;
+			display: block;
+		}
+
+		.modalWindow>div {
+			width: 500px;
+			position: relative;
+			margin: 10% auto;
+			background: #fff;
+		}
+	</style>
 </head>
+
 <body>
 	<img src="img_girl.jpg" alt="Girl in a jacket" style="border:1px solid;border-radius:10px; width: 100%;display: inline-block;">
 	<table style="width: 100%;">
 		<tr>
 			<td style="width: 60%; border:1px solid; border-radius:10px;padding: 10px; background: red">
 				<form action="output.html">
-					<label>First Name:</label><br>
+					<label>First Name:</label>
+					<br>
 					<input type="text" name="firstname" placeholder="First Name" required>
 					<br>
-					<label>Last Name:</label><br>
+					<label>Last Name:</label>
+					<br>
 					<input type="text" name="lastname" placeholder="Mouse" required>
-					<br><br>
-					<input type="radio" name="gender" value="male" checked> Male<br>
-					<input type="radio" name="gender" value="female"> Female<br>
+					<br>
+					<br>
+					<input type="radio" name="gender" value="male" checked> Male
+					<br>
+					<input type="radio" name="gender" value="female"> Female
+					<br>
 					<input type="radio" name="gender" value="other"> Other
 					<input id="date" type="date">
-					<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-					<input type="checkbox" name="vehicle2" value="Car"> I have a car 
+					<input type="checkbox" name="vehicle1" value="Bike"> I have a bike
+					<br>
+					<input type="checkbox" name="vehicle2" value="Car"> I have a car
 					<button type="submit" value="Submit">Submit</button>
 					<input type="reset" value="Reset">
 					<input type="date">
@@ -52,8 +62,7 @@
 			<td style="width: 40%; border:1px solid; border-radius:10px; padding: 10px">
 				<video width="100%" height="240" controls>
 					<source src="movie.mp4" type="video/mp4">
-					<source src="movie.ogg" type="video/ogg">
-						Your browser does not support the video tag.
+					<source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.
 				</video>
 				<input type="color" name="favcolor" value="#ff0000">
 			</td>
@@ -61,16 +70,16 @@
 	</table>
 	<div style="box-sizing: border-box;border:1px solid; border-radius:10px;padding: 10px">Footer</div>
 
-<!--Modal-->	
+	<!--Modal-->
 	<a href="#openModal">Submit Modal</a>
 	<div id="openModal" class="modalWindow">
 		<div>
 			<a href="#close" title="close" class="close">X</a>
 			<h2>This is a sample modal window</h2>
 			<p>This is a sample modal window that can be created using CSS3 and HTML5.</p>
-			
+
 		</div>
 	</div>
 </body>
-</html>
 
+</html>
